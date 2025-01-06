@@ -86,7 +86,7 @@ def print_result(previous_nodes, shortest_path, start_node, target_node):
     print("Path Taken:"," -> ".join(reversed(path)))
 
 ## Cities are input into the graph and any connecting cities are created as edges with a "weight" or distance between them.
-cities = ['Arad','Zerind','Oradea','Sibiu','Fagaras','Bucharest','Timisoara','Lugoj','Mehadia','Drobeta','Craiova','Rimnicu Vilcea','Pitesti']
+cities = ['Arad','Zerind','Oradea','Sibiu','Fagaras','Bucharest','Timisoara','Lugoj','Mehadia','Drobeta','Craiova','Rimnicu Vilcea','Pitesti','Giurgiu','Urziceni','Hirsova','Eforie','Vaslui','Iasi','Neamt']
 edges = {}
 for city in cities:
     edges[city] = {}
@@ -107,8 +107,15 @@ edges['Oradea']['Sibiu'] = 151
 edges['Sibiu']['Fagaras'] = 99
 edges['Sibiu']['Rimnicu Vilcea'] = 80
 edges['Fagaras']['Bucharest'] = 211
+edges['Bucharest']['Giurgiu'] = 90
+edges['Bucharest']['Urziceni'] = 85 
+edges['Urziceni']['Hirsova'] = 98
+edges['Hirsova']['Eforie'] = 86
+edges['Urziceni']['Vaslui'] = 142 
+edges['Vaslui']['Iasi'] = 92 
+edges['Iasi']['Neamt'] = 87 
 
 graph = Graph(cities, edges)
 
 previous_nodes, shortest_path = dijkstra_algorithm(graph=graph, start_node='Arad')
-print_result(previous_nodes, shortest_path, start_node='Arad', target_node='Bucharest')
+print_result(previous_nodes, shortest_path, start_node='Arad', target_node='Craiova')
