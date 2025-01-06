@@ -93,12 +93,27 @@ Visualization of the cities and distances
 
 ---
 
-## How It Works
+# How It Works
 
-1. The cities are represented as nodes in a graph.
-2. Edges represent distances between connected cities.
-3. The program computes the least-cost path using Dijkstra's algorithm.
+1. **Graph Initialization**: 
+   - The program begins by defining cities as nodes and their connections as edges with weights (distances).
+   - A Python class is used to construct the graph and ensure bidirectional connectivity between nodes.
 
+2. **Shortest Path Calculation**:
+   - The `dijkstra_algorithm` function is called with the graph and the starting node as inputs.
+   - Each node is initialized with a distance of infinity, except the start node, which is set to 0.
+   - A priority-based traversal begins, always selecting the node with the shortest known distance.
+   - For each node, the algorithm evaluates neighboring nodes and updates their shortest known distance if a shorter path is found through the current node.
+
+3. **Path Reconstruction**:
+   - Once all nodes have been visited, the algorithm uses the `previous_nodes` dictionary to reconstruct the shortest path from the start node to the target node.
+   - The path and total cost are then displayed to the user.
+
+4. **Example Cities and Distances**:
+   - Cities like Arad, Sibiu, and Bucharest are connected with predefined distances, making the graph resemble a real-world scenario.
+
+5. **Custom Usage**:
+   - Modify the cities, distances, or starting/target nodes in the script to test different scenarios.
 ---
 
 ## Contribution
