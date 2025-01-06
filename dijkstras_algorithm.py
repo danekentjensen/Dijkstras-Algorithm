@@ -117,5 +117,6 @@ edges['Iasi']['Neamt'] = 87
 
 graph = Graph(cities, edges)
 
+## Here is where you input the start node and target node for the calculation.
 previous_nodes, shortest_path = dijkstra_algorithm(graph=graph, start_node='Arad')
 print_result(previous_nodes, shortest_path, start_node='Arad', target_node='Craiova')
